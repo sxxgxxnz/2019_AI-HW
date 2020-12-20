@@ -1,0 +1,9 @@
+man(marcus).
+pompeian(marcus).
+roman(X):-pompeian(X).
+ruler(caesar).
+hate(X,caesar):-roman(X),not(loyal(X,caesar)).
+loyal(X,caesar):-roman(X),not(hate(X,caesar)).
+loyal(X,Y):-man(X),man(Y).
+not(loyal(X,Y)):-assassin(X,Y),man(X),ruler(Y).
+assassin(marcus,caesar).
